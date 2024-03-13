@@ -1,0 +1,193 @@
+﻿<UserControl x:Class="ConcursDraexlmaier.View.DBOperationView.UpdateAccountView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ConcursDraexlmaier.View.DBOperationView" xmlns:Icon1="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             Width="1200"
+    Height="720"
+    mc:Ignorable="d">
+
+    <Border
+        Margin="0,0,30,0"
+        Background="#3D3D45"
+        CornerRadius="0 15 15 0">
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--#region Row0-->
+
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Height="85"
+                Margin="308,15,280,0"
+                VerticalAlignment="Top"
+                FontSize="50"
+                FontStyle="Normal"
+                Foreground="AliceBlue"
+                Style="{StaticResource titleText}"
+                Text="Account Update" />
+            <Icon1:PackIconMaterial
+                Grid.Row="0"
+                Grid.Column="0"
+                Width="40"
+                Height="40"
+                Margin="360,30,0,0"
+                Foreground="AliceBlue"
+                Kind="DatabaseEdit" />
+
+            <!--#endregion-->
+
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="20,20,20,105"
+                FontSize="20"
+                FontStyle="Italic"
+                Foreground="AliceBlue"
+                Opacity="0.7"
+                Style="{StaticResource textHint}"
+                Text="Username" />
+            <TextBox
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="70,55,70,60"
+                Foreground="AliceBlue"
+                Style="{StaticResource TxBox2}"
+                Text="{Binding Path=Username, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="20,20,20,105"
+                FontSize="20"
+                FontStyle="Italic"
+                Foreground="AliceBlue"
+                Opacity="0.7"
+                Style="{StaticResource textHint}"
+                Text="NickName" />
+            <TextBox
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="70,55,70,60"
+                Foreground="AliceBlue"
+                Style="{StaticResource TxBox2}"
+                Text="{Binding Path=Nickname, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="20,20,20,105"
+                FontSize="20"
+                FontStyle="Italic"
+                Foreground="AliceBlue"
+                Opacity="0.7"
+                Style="{StaticResource textHint}"
+                Text="PhoneNumber" />
+            <TextBox
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="70,55,70,60"
+                Foreground="AliceBlue"
+                Style="{StaticResource TxBox2}"
+                Text="{Binding Path=PhoneNumber, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="20,20,20,105"
+                FontSize="20"
+                FontStyle="Italic"
+                Foreground="AliceBlue"
+                Opacity="0.7"
+                Style="{StaticResource textHint}"
+                Text="Password" />
+            <TextBox
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="70,55,70,60"
+                Foreground="AliceBlue"
+                Style="{StaticResource TxBox2}"
+                Text="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="20,20,20,105"
+                FontSize="20"
+                FontStyle="Italic"
+                Foreground="AliceBlue"
+                Opacity="0.7"
+                Style="{StaticResource textHint}"
+                Text="Email" />
+            <TextBox
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="70,55,70,60"
+                Foreground="AliceBlue"
+                Style="{StaticResource TxBox2}"
+                Text="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="20,20,20,105"
+                FontSize="20"
+                FontStyle="Italic"
+                Foreground="AliceBlue"
+                Opacity="0.7"
+                Style="{StaticResource textHint}"
+                Text="Role" />
+            <ComboBox
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="70,55,70,60"
+                Background="Transparent"
+                FontSize="20"
+                Foreground="AliceBlue"
+                ItemsSource="{Binding Roles, UpdateSourceTrigger=PropertyChanged}"
+                Opacity="100"
+                SelectedItem="{Binding Role}"
+                Style="{DynamicResource ComboBoxStyle1}" />
+
+
+            <Button
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Width="170"
+                Height="55"
+                Margin="500,20,0,75"
+                HorizontalAlignment="Left"
+                Background="CadetBlue"
+                Command="{Binding Path=AddAccount}"
+                Style="{StaticResource button}">
+                <TextBlock Foreground="White" Text="Add" />
+            </Button>
+
+            <Icon1:PackIconMaterial
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="8,8"
+                HorizontalAlignment="Right"
+                Foreground="Red"
+                Kind="ExitToApp"
+                Opacity="0.7" />
+
+        </Grid>
+    </Border>
+</UserControl>

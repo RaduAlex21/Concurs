@@ -1,0 +1,120 @@
+﻿<UserControl
+    x:Class="ConcursDraexlmaier.View.DriverSideBarView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ConcursDraexlmaier.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="720"
+    mc:Ignorable="d">
+
+    <Border Background="#3D3D45" CornerRadius="15 0 0 15">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+            </Grid.ColumnDefinitions>
+
+            <!--#region Left Panel-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Margin="20,30,0,35"
+                    Style="{StaticResource topMenuButton}">
+                    <Icon:PackIconMaterial
+                        Width="22"
+                        Height="22"
+                        Kind="AccountSettings" />
+                </Button>
+
+                <Button
+                    Grid.Row="0"
+                    Margin="60,30,0,35"
+                    Style="{StaticResource topMenuButton}">
+                    <Icon:PackIconMaterial
+                        Width="22"
+                        Height="22"
+                        Kind="WindowMinimize" />
+                </Button>
+
+                <Button
+                    Grid.Row="0"
+                    Margin="100,30,0,35"
+                    Style="{StaticResource topMenuButton}">
+                    <Icon:PackIconMaterial
+                        Width="22"
+                        Height="22"
+                        Kind="CloseCircle" />
+                </Button>
+
+                <Border
+                    Grid.Row="1"
+                    Background="#0C989F"
+                    CornerRadius="0 15 0 15">
+                    <DockPanel>
+                        <TextBlock
+                            Margin="5,25,10,15"
+                            DockPanel.Dock="Top"
+                            FontSize="30"
+                            FontWeight="Bold"
+                            Foreground="#094548"
+                            Text="Driver"
+                            TextAlignment="Center" />
+
+                        <Separator
+                            Height="1"
+                            Margin="25,25,25,25"
+                            Background="#0E686C"
+                            DockPanel.Dock="Top" />
+
+                        <StackPanel DockPanel.Dock="Top">
+                            <Button Height="50" Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="ViewDashboard" Style="{StaticResource iconMenuButton}" />
+                                    <TextBlock Text="DashBoard" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+
+                        <StackPanel DockPanel.Dock="Top">
+                            <Button Height="50" Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="DatabaseEdit" Style="{StaticResource iconMenuButton}" />
+                                    <TextBlock Text="TransportDetails" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+
+                        <StackPanel DockPanel.Dock="Top">
+                            <Button Height="50" Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="DatabaseEdit" Style="{StaticResource iconMenuButton}" />
+                                    <TextBlock Text="Transport" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+
+                        
+
+                        <Button
+                            Height="50"
+                            VerticalAlignment="Bottom"
+                            Style="{StaticResource menuButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource iconMenuButton}" />
+                                <TextBlock Text="Logout" />
+                            </StackPanel>
+                        </Button>
+
+                    </DockPanel>
+                </Border>
+            </Grid>
+            <!--#endregion-->
+        </Grid>
+    </Border>
+</UserControl>

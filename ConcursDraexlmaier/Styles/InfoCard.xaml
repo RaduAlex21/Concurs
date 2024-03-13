@@ -1,0 +1,63 @@
+﻿<UserControl
+    x:Class="ConcursDraexlmaier.Styles.InfoCard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ConcursDraexlmaier.Styles"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="InfoCardf"
+    Width="315"
+    Height="140"
+    mc:Ignorable="d">
+
+    <Border Margin="0,0,25,0">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                <GradientStop Offset="0" Color="{Binding Path=Background1, ElementName=InfoCardf}" />
+                <GradientStop Offset="1" Color="{Binding Path=Background2, ElementName=InfoCardf}" />
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Border.Clip>
+            <RectangleGeometry
+                RadiusX="15"
+                RadiusY="15"
+                Rect="0,0,290,140" />
+        </Border.Clip>
+
+        <Grid>
+            <Ellipse
+                Width="210"
+                Height="210"
+                Margin="0,-130,-90,0"
+                HorizontalAlignment="Right">
+                <Ellipse.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Offset="0" Color="{Binding Path=EllipseBackGround1, ElementName=InfoCardf}" />
+                        <GradientStop Offset="1" Color="{Binding Path=EllipseBackGround2, ElementName=InfoCardf}" />
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <Icon:PackIconMaterial
+                Width="60"
+                Height="60"
+                Margin="0,10,10,25"
+                HorizontalAlignment="Right"
+                Foreground="AliceBlue"
+                Kind="{Binding Path=Icon, ElementName=InfoCardf}" />
+
+            <StackPanel Margin="35,0,0,20" VerticalAlignment="Bottom">
+                <TextBlock
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Foreground="AliceBlue"
+                    Text="{Binding Path=Text, ElementName=InfoCardf}" />
+            </StackPanel>
+
+
+
+        </Grid>
+    </Border>
+</UserControl>

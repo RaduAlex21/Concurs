@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="ConcursDraexlmaier.View.DriverPanel.DriverTransportDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ConcursDraexlmaier.View.DriverPanel" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             Width="1200"
+    Height="720"
+    mc:Ignorable="d">
+
+    <Border
+        Margin="0,0,30,0"
+        Background="#3D3D45"
+        CornerRadius="0 15 15 0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--#region Main Selection-->
+            <StackPanel
+                Width="200"
+                Height="50"
+                Margin="900,30,15,15"
+                DockPanel.Dock="Top">
+                <Button
+                    Height="50"
+                    Background="#0C989F"
+                    Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial
+                            Foreground="AliceBlue"
+                            Kind="DatabaseImport"
+                            Style="{StaticResource iconMenuButton}" />
+                        <TextBlock Foreground="AliceBlue" Text="Add Transport" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <!--#endregion-->
+
+            <!--#region DataGrid-->
+            <DataGrid
+                x:Name="View"
+                Grid.Row="1"
+                Width="1170"
+                Margin="0,10,0,0"
+                HorizontalAlignment="Left"
+                CellStyle="{DynamicResource DataGridCellStyle1}"
+                ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                RowStyle="{DynamicResource DataGridRowStyle1}"
+                Style="{DynamicResource DataGridStyle1}">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn Width="auto" CanUserReorder="False">
+                        <DataGridCheckBoxColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox />
+                            </DataTemplate>
+                        </DataGridCheckBoxColumn.HeaderTemplate>
+                    </DataGridCheckBoxColumn>
+
+                    <DataGridTextColumn
+                        Width="auto"
+                        CanUserReorder="False"
+                        Header="#"
+                        IsReadOnly="True" />
+
+                    <DataGridTemplateColumn
+                        Width="*"
+                        CanUserReorder="False"
+                        Header="test0"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border
+                                        Width="25"
+                                        Height="25"
+                                        Margin="0,0,10,0"
+                                        Background="red"
+                                        CornerRadius="50">
+                                        <TextBlock
+                                            Margin="0,0,0,1"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"
+                                            Text="..." />
+                                    </Border>
+
+                                    <TextBlock VerticalAlignment="Center" Text="..." />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn
+                        Width="*"
+                        Header="test2"
+                        IsReadOnly="True" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Header="test3"
+                        IsReadOnly="True" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Header="test4"
+                        IsReadOnly="True" />
+
+                    <DataGridTemplateColumn
+                        Width="auto"
+                        Header="test5"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource ResourceKey=gridEditBTN}">
+                                        <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridIconBTN}" />
+                                    </Button>
+                                    <Button Style="{StaticResource ResourceKey=gridRemoveBTN}">
+                                        <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridIconBTN}" />
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!--#endregion-->
+        </Grid>
+    </Border>
+</UserControl>
